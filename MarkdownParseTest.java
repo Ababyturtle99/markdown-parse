@@ -35,4 +35,29 @@ public class MarkdownParseTest {
         List<String> expected = List.of("space in url");
         assertEquals(links, expected);
     }
+
+
+    @Test
+    public void  testLabTest1() {
+        String contents= Files.readString(Path.of("./labTest1.md"));
+        List<String> expect = List.of();
+        assertEquals(expect, MarkdownParse.getLinks(contents));
+
+    }
+
+    @Test
+    public void  testLabTest2() {
+        String contents= Files.readString(Path.of("./labTest2.md"));
+        List<String> expect = List.of();
+        assertEquals(expect, MarkdownParse.getLinks(contents));
+
+    }
+
+    @Test
+    public void  testLabTest3() {
+        String contents= Files.readString(Path.of("./labTest3.md"));
+        List<String> expect = List.of();
+        assertEquals(expect, MarkdownParse.getLinks(contents));
+
+    }
 }
