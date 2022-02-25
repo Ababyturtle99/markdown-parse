@@ -39,25 +39,31 @@ public class MarkdownParseTest {
 
     @Test
     public void  testLabTest1() {
-        String contents= Files.readString(Path.of("./labTest1.md"));
-        List<String> expect = List.of();
-        assertEquals(expect, MarkdownParse.getLinks(contents));
-
+        // String contents= Files.readString(Path.of("./labTest1.md"));
+        // List<String> expect = List.of();
+        // assertEquals(expect, MarkdownParse.getLinks(contents));
+        Path filename = Path.of("labTest1.md");
+        String contents = Files.readString(filename);
+        ArrayList<String> links = MarkdownParse.getLinks(contents);
+        List<String> expected = List.of("space in url");
+        assertEquals(links, expected);
     }
 
     @Test
     public void  testLabTest2() {
-        String contents= Files.readString(Path.of("./labTest2.md"));
-        List<String> expect = List.of();
-        assertEquals(expect, MarkdownParse.getLinks(contents));
-
+        Path filename = Path.of("labTest2.md");
+        String contents = Files.readString(filename);
+        ArrayList<String> links = MarkdownParse.getLinks(contents);
+        List<String> expected = List.of("space in url");
+        assertEquals(links, expected);
     }
 
     @Test
     public void  testLabTest3() {
-        String contents= Files.readString(Path.of("./labTest3.md"));
-        List<String> expect = List.of();
-        assertEquals(expect, MarkdownParse.getLinks(contents));
-
+        Path filename = Path.of("labTest3.md");
+        String contents = Files.readString(filename);
+        ArrayList<String> links = MarkdownParse.getLinks(contents);
+        List<String> expected = List.of("space in url");
+        assertEquals(links, expected);
     }
 }
