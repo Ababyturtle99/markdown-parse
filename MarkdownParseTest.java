@@ -33,37 +33,34 @@ public class MarkdownParseTest {
         String contents = Files.readString(filename);
         ArrayList<String> links = MarkdownParse.getLinks(contents);
         List<String> expected = List.of("space in url");
-        assertEquals(links, expected);
+        assertEquals(expected, links);
     }
 
 
     @Test
-    public void  testLabTest1() {
-        // String contents= Files.readString(Path.of("./labTest1.md"));
-        // List<String> expect = List.of();
-        // assertEquals(expect, MarkdownParse.getLinks(contents));
+    public void  testLabTest1() throws IOException{
         Path filename = Path.of("labTest1.md");
         String contents = Files.readString(filename);
         ArrayList<String> links = MarkdownParse.getLinks(contents);
-        List<String> expected = List.of("space in url");
-        assertEquals(links, expected);
+        List<String> expected = List.of("'google.com", "google.com", "ucsd.edu");
+        assertEquals(expected, links);
     }
 
     @Test
-    public void  testLabTest2() {
+    public void  testLabTest2() throws IOException{
         Path filename = Path.of("labTest2.md");
         String contents = Files.readString(filename);
         ArrayList<String> links = MarkdownParse.getLinks(contents);
-        List<String> expected = List.of("space in url");
-        assertEquals(links, expected);
+        List<String> expected = List.of("a.com(())", "example.com");
+        assertEquals(expected, links);
     }
 
     @Test
-    public void  testLabTest3() {
+    public void  testLabTest3() throws IOException{
         Path filename = Path.of("labTest3.md");
         String contents = Files.readString(filename);
         ArrayList<String> links = MarkdownParse.getLinks(contents);
-        List<String> expected = List.of("space in url");
-        assertEquals(links, expected);
+        List<String> expected = List.of("https://ucsd-cse15l-w22.github.io/");
+        assertEquals(expected, links);
     }
 }
