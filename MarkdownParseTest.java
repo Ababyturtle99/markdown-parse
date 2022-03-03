@@ -42,7 +42,7 @@ public class MarkdownParseTest {
         Path filename = Path.of("labTest1.md");
         String contents = Files.readString(filename);
         ArrayList<String> links = MarkdownParse.getLinks(contents);
-        List<String> expected = List.of("'google.com", "google.com", "ucsd.edu");
+        List<String> expected = List.of("`google.com", "google.com", "ucsd.edu");
         assertEquals(expected, links);
     }
 
